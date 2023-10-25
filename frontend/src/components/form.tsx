@@ -16,7 +16,7 @@ function RegisterForm() {
     description: '',
     color: '',
     category: '',
-    price: 0,
+    price: parseInt('')
   };
 
   const [product, setProduct] = useState(initialProductState);
