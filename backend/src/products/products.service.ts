@@ -33,7 +33,7 @@ export class ProductsService {
 
         // checks if the price changed without changing the promotional one
         if (productDto.price !== product.price && productDto.promoPrice === product.promoPrice) {
-            productDto.promoPrice = calcPromoPrice(productDto.price, product.category);
+            productDto.promoPrice = calcPromoPrice(productDto.price, productDto.category);
         }
 
         // checks if the category changed without changing the price
