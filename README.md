@@ -1,18 +1,17 @@
 # :brain: Apollo Tech Test
-
-Web Developer Jr • FullStack • 2023
+<p align="center">Jr Web Developer • FullStack • 2023</p>
+<p align="center">
+  <img src="https://apollosolutionsdev.com/wp-content/uploads/2022/06/Versoes-do-Logo.png" width="500" height="250"/>
+</p>
 
 ## :bookmark_tabs: Table of Contents
 ### [Setup](#rocket-setup) • [Technologies](#gear-technologies) • [Questions](#question-questions) • [Endpoints](#door-endpoints) • [Schemas](#bricks-schemas) • [Screenshots](#camera_flash-screenshots)
 
 ## :information_source: About The App
-<p align="center">
-  <img src="https://apollosolutionsdev.com/wp-content/uploads/2022/06/Versoes-do-Logo.png" />
-</p>
 
 Fullstack application developed for the **[Apollo Solutions Dev](https://apollosolutionsdev.com/)** technical test that implements a simple product management system. The app offers the registration of new products and the listing of existing ones as the main functionality, and also provides all CRUD (Create, Read, Update, Delete) basic methods.
 
-Built using [TypeScript](https://www.typescriptlang.org/), the application has a **backend** powered by [Node](https://nodejs.org/en) and [NestJS](https://nestjs.com/), and employs [SQLite](https://www.sqlite.org/) for data storage. The **frontend**, on the other hand, is constructed using [React](https://react.dev/) and [MaterialUI](https://mui.com/), ensuring a great user experience with an simples and intuitive interface, along with a fast **API communication** provided by [Axios](https://axios-http.com/).
+Built using [TypeScript](https://www.typescriptlang.org/), the application has a **backend** powered by [Node](https://nodejs.org/en) and [NestJS](https://nestjs.com/), and employs [SQLite](https://www.sqlite.org/) for data storage. The **frontend**, on the other hand, is constructed using [React](https://react.dev/) and [MaterialUI](https://mui.com/), ensuring a great user experience with a simple and intuitive interface, along with a fast **API communication** provided by [Axios](https://axios-http.com/).
 
 ### Features
 - **Product management:** Users can read, register, modify, and delete products.
@@ -56,14 +55,15 @@ npm start
 ```
 
 ### SQLite Database
-This project operates with an **SQLite database**, offering a simple and straightforward backend setup. There's no need to configure anything manually, as the **API**, constructed using **NestJS** and **TypeORM**, takes care of everything. It automatically generates a db.sqlite database file within the backend folder's root directory, which stores all the data managed by the application. If you need to restart the API, the database remains consistent, and it can be deleted at anytime to a fresh restart along with the API if wanted so.
+This project operates with an **SQLite database**, offering a simple and straightforward backend setup. There's no need to configure anything manually, as the **API**, constructed using **NestJS** and **TypeORM**, takes care of everything. It automatically generates a `db.sqlite` database file within the backend folder's root directory, which stores all the data managed by the application. If you need to restart the API, the database remains consistent, and it can also be deleted at anytime to a fresh restart along with the API if wanted so.
+
+> **Obs.:* in some Linux environments, it may be necessary to install the `sqlite3` package!
 
 ## :gear: Technologies
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![MaterialUI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
-![ReactRouter](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) •
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
@@ -111,20 +111,32 @@ In this case, it would be interesting to create a new entity in the database tha
 ## :camera_flash: Screenshots
 ### List page
 ![List](/github/list-table.png)
+
 - Sorting table by name, category or price
+
 ![Order](/github/table-order.gif)
+
 - Filtering by name or category
+
 ![Filter](/github/table-filter.gif)
+
 - Modifying a product with automatic price calculator
+
 ![Modify](/github/table-modify.gif)
+
 - Removing a product
+
 ![Remove](/github/table-remove.gif)
 
 ### Register page
 ![Register](/github/register-form.png)
+
 - Submitting an invalid form
+
 ![Invalid](/github/invalid-form.gif)
+
 - Submitting a valid form
+
 ![Valid](/github/valid-form.gif)
 
 [↑ Back to top](#brain-apollo-tech-test)
