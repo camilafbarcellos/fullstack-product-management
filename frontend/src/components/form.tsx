@@ -25,7 +25,22 @@ function RegisterForm() {
     setProduct({ ...product, [name]: value });
   };
 
+  const isFormValid = () => {
+    for (const key in product) {
+      if (!product[key as keyof typeof product]) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   const handleRegister = async () => {
+    if (!isFormValid()) {
+      setSuccess(false);
+      setFailure(true);
+      return;
+    }
+
     try {
       await axios.post('http://localhost:3100/products', product);
       setSuccess(true);
