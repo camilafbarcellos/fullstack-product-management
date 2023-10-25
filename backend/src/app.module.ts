@@ -7,7 +7,7 @@ import { Product } from './products/product.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'apollo.sqlite',
+      database: 'db.sqlite',
       entities: [Product],
       synchronize: true,
     }),

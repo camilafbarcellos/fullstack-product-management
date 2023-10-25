@@ -3,7 +3,7 @@
 /node_modules
 
 # database
-apollo.sqlite
+db.sqlite
 
 # Logs
 logs
