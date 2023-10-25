@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Box, Button, Grid, InputAdornment, MenuItem, Stack, TextField } from '@mui/material';
+import { Alert, Button, Grid, InputAdornment, MenuItem, Stack, TextField } from '@mui/material';
 import axios from 'axios';
 import { ProductCategory } from '../types/productCategory';
 
@@ -34,7 +34,7 @@ function RegisterForm() {
 
   return (
     <Grid container justifyContent="center" alignItems="center">
-      <form>
+      <form style={{ minWidth: '35%' }}>
         <Stack spacing={2}>
           <TextField
             required

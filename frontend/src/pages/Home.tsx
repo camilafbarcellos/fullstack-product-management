@@ -4,7 +4,7 @@ import ProductsTable from '../components/table';
 export default function Home() {
 
     return (
-        <div style={{padding:"80px 10px 10px 10px"}}>
+        <div style={{ paddingTop: "80px" }}>
             <Menu />
             <ProductsTable />
         </div>
