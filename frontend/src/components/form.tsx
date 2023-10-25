@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Alert, Button, Grid, InputAdornment, MenuItem, Stack, TextField } from '@mui/material';
+import {
+  Alert, Button, Grid, InputAdornment,
+  MenuItem, Stack, TextField,
+} from '@mui/material';
 import axios from 'axios';
 import { ProductCategory } from '../types/productCategory';
 
@@ -7,13 +10,15 @@ function RegisterForm() {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
 
-  const [product, setProduct] = useState({
+  const initialProductState = {
     name: '',
     description: '',
     color: '',
     category: '',
-    price: ''
-  });
+    price: '',
+  };
+
+  const [product, setProduct] = useState(initialProductState);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,8 +28,9 @@ function RegisterForm() {
   const handleRegister = async () => {
     try {
       await axios.post('http://localhost:3100/products', product);
-      setFailure(false);
       setSuccess(true);
+      setFailure(false);
+      setProduct(initialProductState);
     } catch (error) {
       setSuccess(false);
       setFailure(true);
@@ -38,7 +44,6 @@ function RegisterForm() {
         <Stack spacing={2}>
           <TextField
             required
-            id="outlined-required"
             type="text"
             label="Name"
             name="name"
@@ -48,7 +53,6 @@ function RegisterForm() {
           <TextField
             required
             type="text"
-            id="outlined-required"
             label="Description"
             name="description"
             value={product.description}
@@ -57,7 +61,6 @@ function RegisterForm() {
           <TextField
             required
             type="text"
-            id="outlined-required"
             label="Color"
             name="color"
             value={product.color}
@@ -65,7 +68,6 @@ function RegisterForm() {
           />
           <TextField
             select
-            id="outlined-select"
             label="Category"
             helperText="Please select a category"
             name="category"
@@ -81,7 +83,6 @@ function RegisterForm() {
           <TextField
             required
             type="number"
-            id="outlined-start-adornment"
             label="Price"
             InputProps={{
               startAdornment: <InputAdornment position="start">$</InputAdornment>,
@@ -93,12 +94,12 @@ function RegisterForm() {
           <Button variant="contained" color="primary" onClick={handleRegister}>
             Register product
           </Button>
-          {!success ? '' : <Alert severity="success">Success!</Alert>}
-          {!failure ? '' : <Alert severity="error">Invalid product, try again!</Alert>}
+          {success && <Alert severity="success">Success!</Alert>}
+          {failure && <Alert severity="error">Invalid product, try again!</Alert>}
         </Stack>
       </form>
     </Grid>
   );
-};
+}
 
 export default RegisterForm;
