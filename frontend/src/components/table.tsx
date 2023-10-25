@@ -140,7 +140,7 @@ function ProductsTable() {
           </TableHead>
           <TableBody>
             {filteredProducts
-              .sort((a, b) => (order === 'asc' ? a[orderBy] > b[orderBy] ? 1 : -1 : b[orderBy] > a[orderBy] ? 1 : -1))
+              .sort((a, b) => (order === 'asc' ? a[orderBy]! > b[orderBy]! ? 1 : -1 : b[orderBy]! > a[orderBy]! ? 1 : -1))
               .map((product: Product) => (
                 <TableRow key={product.id}>
                   <TableCell>
@@ -179,7 +179,7 @@ function ProductsTable() {
                         value={product.category}
                         onChange={(e) => {
                           if (e.target.value) {
-                            handleFieldChange('category', product.id)(e as any);
+                            handleFieldChange('category', product.id!)(e as any);
                           }
                         }}
                       >
@@ -219,9 +219,9 @@ function ProductsTable() {
                     {editProductId === product.id ? (
                       <Button onClick={() => handleSaveProduct(product)} color="primary" startIcon={<SaveIcon />} />
                     ) : (
-                      <Button onClick={() => handleModifyProduct(product.id)} color="primary" startIcon={<EditIcon />} />
+                      <Button onClick={() => handleModifyProduct(product.id!)} color="primary" startIcon={<EditIcon />} />
                     )}
-                    <Button onClick={() => handleRemoveProduct(product.id)} color="error" startIcon={<DeleteIcon />} />
+                    <Button onClick={() => handleRemoveProduct(product.id!)} color="error" startIcon={<DeleteIcon />} />
                   </TableCell>
                 </TableRow>
               ))}

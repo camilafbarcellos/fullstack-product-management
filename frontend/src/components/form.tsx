@@ -5,17 +5,18 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { ProductCategory } from '../types/productCategory';
+import { Product } from '../types/product';
 
 function RegisterForm() {
   const [success, setSuccess] = useState(false);
   const [failure, setFailure] = useState(false);
 
-  const initialProductState = {
+  const initialProductState: Product = {
     name: '',
     description: '',
     color: '',
     category: '',
-    price: '',
+    price: 0,
   };
 
   const [product, setProduct] = useState(initialProductState);
@@ -27,7 +28,7 @@ function RegisterForm() {
 
   const isFormValid = () => {
     for (const key in product) {
-      if (!product[key as keyof typeof product]) {
+      if (!product[key as keyof typeof product] || product.price < 0) {
         return false;
       }
     }
