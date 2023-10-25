@@ -35,12 +35,12 @@ function ProductsTable() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Color</TableCell>
-            <TableCell>Product Type</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell>Promotional Price</TableCell>
+            <TableCell><b>Name</b></TableCell>
+            <TableCell><b>Description</b></TableCell>
+            <TableCell><b>Color</b></TableCell>
+            <TableCell><b>Product Type</b></TableCell>
+            <TableCell><b>Price</b></TableCell>
+            <TableCell><b>Promotional Price</b></TableCell>
             <TableCell></TableCell>
           </TableRow>
         </TableHead>
