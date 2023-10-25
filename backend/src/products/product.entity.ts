@@ -1,3 +1,4 @@
+import { ProductCategory } from 'src/util/ProductCategory';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -14,12 +15,13 @@ export class Product {
     @Column()
     color: string;
 
-    @Column()
+    // controle de categoria por enum
+    @Column({ enum: ProductCategory })
     category: string;
 
-    @Column()
+    @Column({ type: 'decimal', precision: 10, scale: 2 })
     price: number;
 
-    @Column()
+    @Column({ type: 'decimal', precision: 10, scale: 2 })
     promoPrice: number;
 }

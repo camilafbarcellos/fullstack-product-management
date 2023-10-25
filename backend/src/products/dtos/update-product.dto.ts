@@ -1,6 +1,7 @@
 import {
-    IsString, IsOptional, IsNumber
+    IsString, IsOptional, IsNumber, IsEnum
 } from 'class-validator';
+import { ProductCategory } from 'src/util/ProductCategory';
 
 export class UpdateProductDto {
 
@@ -17,13 +18,14 @@ export class UpdateProductDto {
     color?: string;
 
     @IsOptional()
-    @IsString()
-    category?: string;
+    @IsEnum(ProductCategory)
+    category?: ProductCategory;
 
     @IsOptional()
     @IsNumber()
     price?: number;
 
+    // ao alterar um produto, é permitido mudar o valor promocional
     @IsOptional()
     @IsNumber()
     promoPrice?: number;

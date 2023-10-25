@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dtos/create-product.dto';
 import { UpdateProductDto } from './dtos/update-product.dto';
+import { isValidCategory } from 'src/util/CategoryValidator';
 
 @Controller('products')
 export class ProductsController {
@@ -9,6 +10,11 @@ export class ProductsController {
 
     @Post()
     async createProduct(@Body() product: CreateProductDto) {
+        // validador da categoria
+        if (!isValidCategory(product.category)) {
+            throw new BadRequestException('Invalid product category');
+        }
+
         return this.productsService.create(product);
     }
 

@@ -1,6 +1,7 @@
 import {
-    IsString, IsNotEmpty, IsNumber
+    IsString, IsNotEmpty, IsNumber, IsEnum
 } from 'class-validator';
+import { ProductCategory } from 'src/util/ProductCategory';
 
 export class CreateProductDto {
 
@@ -17,14 +18,12 @@ export class CreateProductDto {
     color: string;
 
     @IsNotEmpty()
-    @IsString()
-    category: string;
+    @IsEnum(ProductCategory)
+    category: ProductCategory;
 
+    // ao criar um produto, não é possível definir o valor promocional
+    // pois ele é gerado automaticamente com base na categoria
     @IsNotEmpty()
     @IsNumber()
     price: number;
-
-    @IsNotEmpty()
-    @IsNumber()
-    promoPrice: number;
 }
