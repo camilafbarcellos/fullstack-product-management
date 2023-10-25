@@ -31,14 +31,14 @@ export class ProductsService {
             throw new NotFoundException('Product not found');
         }
 
-        // checks if the price changed without changing the promotional one
-        if (productDto.price !== product.price && productDto.promoPrice === product.promoPrice) {
+        // checks if the category changed
+        if (productDto.category !== product.category) {
             productDto.promoPrice = calcPromoPrice(productDto.price, productDto.category);
         }
 
-        // checks if the category changed without changing the price
-        if (productDto.category !== product.category && productDto.price === product.price) {
-            productDto.promoPrice = calcPromoPrice(product.price, productDto.category);
+        // checks if the price changed without changing the promotional one
+        if (productDto.price !== product.price && productDto.promoPrice === product.promoPrice) {
+            productDto.promoPrice = calcPromoPrice(productDto.price, product.category);
         }
 
         Object.assign(product, productDto);
