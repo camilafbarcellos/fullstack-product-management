@@ -15,7 +15,7 @@ export class Product {
     @Column()
     color: string;
 
-    // controle de categoria por enum
+    // category controlled by enum
     @Column({ enum: ProductCategory })
     category: string;
 

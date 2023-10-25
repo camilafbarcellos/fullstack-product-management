@@ -25,7 +25,7 @@ export class UpdateProductDto {
     @IsNumber()
     price?: number;
 
-    // ao alterar um produto, é permitido mudar o valor promocional
+    // when updating a product, it is allowed to change the promotional price
     @IsOptional()
     @IsNumber()
     promoPrice?: number;

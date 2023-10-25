@@ -12,22 +12,22 @@ export class ProductsService {
     create(productDto: CreateProductDto) {
         const product = this.productsRepository.create(productDto);
 
-        // cálculo do preço promocional (arredondao) com base na categoria
+        // calculate and round promotional price based on the category
         switch (product.category) {
             case 'Smartphones':
-                product.promoPrice = Number((product.price * 0.9745).toFixed(2)); // Desconto de 2.55%
+                product.promoPrice = Number((product.price * 0.9745).toFixed(2)); // 2.55% discount
                 break;
             case 'Furniture':
-                product.promoPrice = Number((product.price * 0.97).toFixed(2)); // Desconto de 3%
+                product.promoPrice = Number((product.price * 0.97).toFixed(2)); // 3% discount
                 break;
             case 'Electronics':
-                product.promoPrice = Number((product.price * 0.957).toFixed(2)); // Desconto de 4.3%
+                product.promoPrice = Number((product.price * 0.957).toFixed(2)); // 4.3% discount
                 break;
             case 'Appliances':
-                product.promoPrice = Number((product.price * 0.95).toFixed(2)); // Desconto de 5%
+                product.promoPrice = Number((product.price * 0.95).toFixed(2)); // 5% discount
                 break;
             case 'Refrigerators':
-                product.promoPrice = Number((product.price * 0.925).toFixed(2)); // Desconto de 7.5%
+                product.promoPrice = Number((product.price * 0.925).toFixed(2)); // 7.5% discount
                 break;
             default:
                 throw new Error('Invalid product category');

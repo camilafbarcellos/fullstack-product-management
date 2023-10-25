@@ -10,7 +10,7 @@ export class ProductsController {
 
     @Post()
     async createProduct(@Body() product: CreateProductDto) {
-        // validador da categoria
+        // category validator
         if (!isValidCategory(product.category)) {
             throw new BadRequestException('Invalid product category');
         }

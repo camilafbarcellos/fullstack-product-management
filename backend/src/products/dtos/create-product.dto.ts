@@ -21,8 +21,8 @@ export class CreateProductDto {
     @IsEnum(ProductCategory)
     category: ProductCategory;
 
-    // ao criar um produto, não é possível definir o valor promocional
-    // pois ele é gerado automaticamente com base na categoria
+    // when creating a product, theres no need to define the promotional prince,
+    // since it is calculated automatically based on the category
     @IsNotEmpty()
     @IsNumber()
     price: number;
