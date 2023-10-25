@@ -47,14 +47,26 @@ function ProductsTable() {
     setEditProductId(productId);
   };
 
+  const isFormValid = (modifiedProduct: Product) => {
+    for (const key in modifiedProduct) {
+      if (!modifiedProduct[key as keyof typeof modifiedProduct] ||
+        modifiedProduct.price < 0 || modifiedProduct.promoPrice! < 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+
   const handleSaveProduct = async (modifiedProduct: Product) => {
-    try {
-      const response = await axios.put(`http://localhost:3100/products/${modifiedProduct.id}`, modifiedProduct);
-      const updatedProducts = products.map((product) => (product.id === modifiedProduct.id ? response.data : product));
-      setProducts(updatedProducts);
-      setEditProductId(null);
-    } catch (error) {
-      console.error('Error:', error);
+    if (isFormValid(modifiedProduct)) {
+      try {
+        const response = await axios.put(`http://localhost:3100/products/${modifiedProduct.id}`, modifiedProduct);
+        const updatedProducts = products.map((product) => (product.id === modifiedProduct.id ? response.data : product));
+        setProducts(updatedProducts);
+        setEditProductId(null);
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
   };
 
