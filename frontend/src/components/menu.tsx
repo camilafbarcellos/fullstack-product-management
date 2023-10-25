@@ -6,7 +6,7 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 function Menu() {
 
   return (
-    <AppBar position="static">
+    <AppBar>
       <Toolbar>
         <Typography variant="h6" component="a" sx={{ flexGrow: 1 }}>
           Product Management

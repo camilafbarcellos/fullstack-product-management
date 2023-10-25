@@ -1,4 +1,4 @@
-type Product = {
+export type Product = {
     id: number,
     name: string,
 	description: string,
@@ -7,5 +7,3 @@ type Product = {
     price: number,
     promoPrice: number
 }
-
-export default Product;
