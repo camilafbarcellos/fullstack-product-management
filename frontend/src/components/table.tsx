@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import Product from '../types/product';
 
 function ProductsTable() {
@@ -41,7 +41,7 @@ function ProductsTable() {
             <TableCell>Product Type</TableCell>
             <TableCell>Price</TableCell>
             <TableCell>Promotional Price</TableCell>
-            <TableCell>Actions</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -54,9 +54,7 @@ function ProductsTable() {
               <TableCell>$ {product.price}</TableCell>
               <TableCell>$ {product.promoPrice}</TableCell>
               <TableCell>
-                <Button onClick={() => handleRemoveProduct(product.id)} color="error" startIcon={<DeleteIcon />}>
-                  Delete
-                </Button>
+                <Button onClick={() => handleRemoveProduct(product.id)} color="error" startIcon={<DeleteRoundedIcon />}/>
               </TableCell>
             </TableRow>
           ))}
