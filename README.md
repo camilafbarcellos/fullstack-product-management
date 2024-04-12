@@ -96,12 +96,13 @@ In this case, it would be interesting to create a new entity in the database tha
 
 ## :bricks: Schemas
 
-### User Entity
+### Product Entity
 |    FieldName   |    Type   | Required |
 |----------------|:---------:|:--------:|
 | `id`           | Number    |   true   |
 | `name`         | String    |   true   |
 | `description`  | String    |   true   |
+| `color`        | String    |   true   |
 | `category`     | String    |   true   |
 | `price`        | Number    |   true   |
 | `promoPrice`   | Number    |   true   |
