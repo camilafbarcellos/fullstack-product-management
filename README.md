@@ -133,5 +133,5 @@ This project operates with an **SQLite database**, offering a simple and straigh
 | <a href="https://github.com/camilafbarcellos">Camila Barcellos</a>
 
 <p align="right">
-    <a href="#globe-with-meridians-product-management-system">↑ Back to top</a>
+    <a href="#globe_with_meridians-product-management-system">↑ Back to top</a>
 </p>
