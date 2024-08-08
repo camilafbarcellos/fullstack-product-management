@@ -1,6 +1,5 @@
 # :globe_with_meridians: Product Management System
 
-## :bookmark_tabs: Table of Contents
 ### [Setup](#rocket-setup) • [Technologies](#gear-technologies) • [Endpoints](#door-endpoints) • [Schemas](#bricks-schemas) • [Screenshots](#camera_flash-screenshots) • [Author](#star2-author)
 
 ## :information_source: About The App
