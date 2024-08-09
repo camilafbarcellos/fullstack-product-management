@@ -1,9 +1,11 @@
+import { InputType } from '@nestjs/graphql';
 import {
     IsString, IsOptional, IsNumber, IsEnum
 } from 'class-validator';
 import { ProductCategory } from 'src/util/ProductCategory';
 
-export class UpdateProductDto {
+@InputType() // GraphQL input
+export class UpdateProductInput {
 
     @IsOptional()
     @IsString()
