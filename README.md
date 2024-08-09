@@ -74,6 +74,12 @@ This project operates with an **SQLite database**, offering a simple and straigh
 
 ## :door: Endpoints
 
+### GraphQL Embedded Playground
+|       Route         |    Method    |                   Description                    |                                                                         
+|   ---------------   | :----------: |  ----------------------------------------------  |                                                                           
+|  `/graphql`         |    GET      |  Queries   | 
+|  `/graphql`         |    POST      |  Mutations   | 
+
 ### Products Endpoints
 |       Route         |    Method    |                   Description                    |                                                                         
 |   ---------------   | :----------: |  ----------------------------------------------  |                                                                           
