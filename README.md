@@ -22,6 +22,8 @@ Built using [TypeScript](https://www.typescriptlang.org/), the application has a
     > When a price is changed, the promotional price will be recalculated.
     
     > When the category is changed, the promotional price will be recalculated based on it.
+- **GraphQL Embedded Playground:** Thanks to GraphQL, has a [embedded playground](http://localhost:3100/graphql) for queries.
+    > Or access the [Apollo Studio](https://studio.apollographql.com/sandbox/explorer) and place the same URL for a better experience.
 - **Sorting and filtering:** Easily sort and filter the product list to find exactly what you need.
 
 ## :rocket: Setup
@@ -74,11 +76,10 @@ This project operates with an **SQLite database**, offering a simple and straigh
 
 ## :door: Endpoints
 
-### GraphQL Embedded Playground
+### GraphQL Endpoint
 |       Route         |    Method    |                   Description                    |                                                                         
-|   ---------------   | :----------: |  ----------------------------------------------  |                                                                           
-|  `/graphql`         |    GET      |  Queries   | 
-|  `/graphql`         |    POST      |  Mutations   | 
+|   ---------------   | :----------: |  ----------------------------------------------  |     
+|  `/graphql`         |    POST      |  GraphQL queries and mutations   | 
 
 ### Products Endpoints
 |       Route         |    Method    |                   Description                    |                                                                         
