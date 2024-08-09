@@ -5,6 +5,9 @@
 # database
 db.sqlite
 
+# GraphQL
+schema.gql
+
 # Logs
 logs
 *.log
